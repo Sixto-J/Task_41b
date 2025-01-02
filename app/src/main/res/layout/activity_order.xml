@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textintro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:padding="@dimen/padding_regular"
+        android:text="@string/intro_text"
+        android:textSize="@dimen/text_heading" />
+
+    <TextView
+        android:id="@+id/order_intro_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textintro"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/text_margin_top"
+        android:layout_marginBottom="@dimen/text_margin_bottom"
+        android:text="Choose a delivery method:"
+        android:textSize="@dimen/intro_text_size">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/aradio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_intro_text"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/sameday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/same_day_messenger_service"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/nextday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_day_ground_delivery"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_up"
+            android:textColor="@color/black" />
+
+
+    </RadioGroup>
+
+</RelativeLayout>
