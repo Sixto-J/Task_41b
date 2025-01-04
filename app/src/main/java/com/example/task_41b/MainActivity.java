@@ -2,6 +2,9 @@ package com.example.task_41b;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -52,6 +55,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection.
+        if(item.getItemId() == R.id.order){
+            showOrder();
+        }else if(item.getItemId() == R.id.status) {
+            //showStatus();
+        }else if(item.getItemId() == R.id.favorites){
+            //showFavorites();
+        }
+        return false;
+    }
+
+    private void showOrder() {
+
+
+
+    }
+
     /**
      * Displays a toast message for the food order
      * and starts the OrderActivity activity.
@@ -66,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public void showFoodOrder(String message) {
         displayToast(message);
         Intent inte = new Intent(this, OrderActivity.class);
+        inte.putExtra("message", message);
         startActivity(inte);
 
     }
@@ -94,3 +124,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+/*button inferior derecha de contacto que cambia a boton de carrito
+    <TextView
+        android:id="@+id/textintro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:text="@string/intro_text"
+
+        />
+ */

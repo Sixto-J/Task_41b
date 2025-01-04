@@ -2,22 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textintro"
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="#3F51B5"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/intro_text"
-        android:textSize="@dimen/text_heading" />
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:textSize="@dimen/text_heading"
+        android:textColor="#F6F3F3"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    <TextView
+        android:id="@+id/oculto"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="invisible"
+        android:text="You ordered a:"
+        android:layout_marginBottom="@dimen/text_margin_bottom"
+        android:layout_below="@id/toolbar"/>
 
     <TextView
         android:id="@+id/order_intro_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textintro"
+        android:layout_below="@id/toolbar"
         android:textColor="@color/black"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="@dimen/text_margin_top"
@@ -58,5 +72,7 @@
 
 
     </RadioGroup>
+
+
 
 </RelativeLayout>
